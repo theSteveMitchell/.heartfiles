@@ -1,7 +1,9 @@
 #script used for promoting code through a 3-branch heirarchy (master => qa => staging)
 #step 1: reverse-merge all changes from staging => qa => master.  Push up to remote
 #step 2: merge master => qa OR qa => staging.  Depends on parameter you pass in.
-#step 3: run specs.  Push up to remote if specs pass
+#step 3: run specs.  Push up to remote if specs pass.  Don't push if specs don't pass.
+
+#if you have a project that is not using this 3-branch model, then go use git-flow and leave me alone.  
 
 
 source ~/.bash_profile
