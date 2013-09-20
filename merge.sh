@@ -35,7 +35,7 @@ if   [ $1 == 'staging' ]; then
   bundle exec rake db:migrate && bundle exec rake db:test:prepare && git checkout db/schema.rb
   echo "This script will run 'rake' command to make sure your test suite passes before pushing"
   exec 5>&1
-  OUTPUT=$( rspec spec | tee /dev/fd/5)
+  OUTPUT=$( bundle exec rspec spec | tee /dev/fd/5)
   if  echo "$OUTPUT" | grep -q "$SUCESS_OUTPUT"; then
           echo 'Test passed! proceeding with the push'
           git push origin staging
@@ -56,7 +56,7 @@ elif [ $1 == 'qa' ];  then
   bundle exec rake db:migrate && bundle exec rake db:test:prepare && git checkout db/schema.rb
   echo "This script will run 'rake' command to make sure your test suite passes before pushing"
   exec 5>&1
-  OUTPUT=$( rspec spec | tee /dev/fd/5)
+  OUTPUT=$( bundle exec rspec spec | tee /dev/fd/5)
   if  echo "$OUTPUT" | grep -q "$SUCESS_OUTPUT"; then
           echo 'Test passed! proceeding with the push'
           git push origin qa
