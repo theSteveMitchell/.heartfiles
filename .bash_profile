@@ -20,7 +20,8 @@ alias ci="bundle exec rake teamcity:ci"
 alias dby="edit config/database.yml" #change database.yml in a rails project.
 alias mgy="edit config/mongoid.yml" #mongo config
 alias migrate="brake db:migrate && brake db:test:prepare"
-alias migrate!="brake db:migrate && brake db:test:prepare && git checkout db/schema.rb"
+alias migrate!="brake db:migrate && brake db:test:prepare && git checkout db/schema.rb" 
+#useful for working in SLQlite when team is sql-server centric, so we don't garble the schema for others.
 
 #RVM GEMSET/PROJECT ALIASES.
 #official projects
