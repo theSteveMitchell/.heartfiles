@@ -11,18 +11,37 @@ if   [ $# -lt 1 ]; then
  echo "I understand you want me to merge something, but you have to tell me where (qa or staging)"
  exit
 fi
+#pull latest from master
 git checkout master
+OUTPUT=$( git status)
+if ! echo $OUTPUT | grep -q "On branch" | grep -q "nothing to commit" ; then
+    echo "You cannot use this merge script because you have staged changes on branch master or local commits that have not been pushed to remote."
+    exit
+fi
 git pull origin master
+
 git checkout staging
+OUTPUT=$( git status)
+if ! echo $OUTPUT | grep -q "On branch" | grep -q "nothing to commit" ; then
+echo "You cannot use this merge script because you have staged changes on branch staging or local commits that have not been pushed to remote."
+exit
+fi
 git pull origin staging
 
 git checkout qa
+OUTPUT=$( git status)
+if ! echo $OUTPUT | grep -q "On branch" | grep -q "nothing to commit" ; then
+echo "You cannot use this merge script because you have staged changes on branch QA or local commits that have not been pushed to remote."
+exit
+fi
 git pull origin qa
+
+#reverse-merge any pending changes from staging back to QA
 git merge staging
 git push origin qa
 
+#reverse-merge any pending changes from QA to master.
 git checkout master
-git pull origin master
 git merge qa
 git push origin master
 
