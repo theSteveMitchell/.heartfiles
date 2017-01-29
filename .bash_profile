@@ -6,6 +6,7 @@ export HEADLESS=false
 export POLTERGEIST=true
 
 #BASH ALIASES
+alias edit="open -a TextWrangler" #TextEdit is the worste.
 alias newalias="edit ~/.bash_profile" #opens this file (so...put this file there!)
 alias refresh="source ~/.bash_profile" #reload the profile to consume changes to this file"
 alias hosts="edit /etc/hosts" #this file always opens read-only
