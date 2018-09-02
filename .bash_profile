@@ -1,3 +1,7 @@
+# Just run this command: 
+# curl https://raw.githubusercontent.com/theSteveMitchell/.heartfiles/master/.bash_profile > ~/.bash_profile
+
+
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
 PATH=$PATH:/usr/local/sbin
 
