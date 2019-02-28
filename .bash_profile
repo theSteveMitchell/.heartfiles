@@ -18,6 +18,9 @@ alias sshconfig="edit ~/.ssh/config"
 #aliasing 'open' seems to break now...likely that's because it's a dumb thing to do. 
 #alias open="edit" #I'm 28 years old, and I've never opened a file as read-only on purpose
 
+#DEVELOPMENT
+alias subl="open -a Sublime\ Text"
+
 #RAILS/RUBY TASKS
 alias brake="bundle exec rake"
 alias brec="bundle exec rspec"
