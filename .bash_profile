@@ -15,7 +15,8 @@ alias newalias="edit ~/.bash_profile" #opens this file (so...put this file there
 alias refresh="source ~/.bash_profile" #reload the profile to consume changes to this file"
 alias hosts="edit /etc/hosts" #this file always opens read-only
 alias sshconfig="edit ~/.ssh/config"
-alias open="edit" #I'm 28 years old, and I've never opened a file as read-only on purpose
+#aliasing 'open' seems to break now...likely that's because it's a dumb thing to do. 
+#alias open="edit" #I'm 28 years old, and I've never opened a file as read-only on purpose
 
 #RAILS/RUBY TASKS
 alias brake="bundle exec rake"
